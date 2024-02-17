@@ -1,3 +1,3 @@
-import { SignUpScreen } from 'app/features/signup/screen'
+import { SignUpScreen } from "app/features/signup/screen";
 
-export default SignUpScreen
+export default SignUpScreen;

@@ -19,11 +19,10 @@ export const userRouter = router({
 				id: z.string(),
 			})
 		)
-		.mutation(({ ctx, input }) => {
+		.mutation(async ({ ctx, input }) => {
 			//create user and link it to the user
-			return ctx.drizzle.insert(user).values({
+			return await ctx.drizzle.insert(user).values({
 				email: input.email,
-				id: parseInt(input.id),
 			});
 		}),
 });

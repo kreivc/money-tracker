@@ -1,8 +1,9 @@
 {
 	"expo": {
-		"name": "myapp",
-		"slug": "myapp",
-		"scheme": "myapp",
+		"name": "money-tracker",
+		"originalFullName": "@org/project",
+		"slug": "money-tracker",
+		"scheme": "money-tracker",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
@@ -18,14 +19,14 @@
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
 			"supportsTablet": true,
-			"bundleIdentifier": "com.tamagui.myapp"
+			"bundleIdentifier": "com.tamagui.money-tracker"
 		},
 		"android": {
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/adaptive-icon.png",
 				"backgroundColor": "#FFFFFF"
 			},
-			"package": "com.tamagui.myapp"
+			"package": "com.tamagui.money-tracker"
 		},
 		"web": {
 			"favicon": "./assets/favicon.png"
@@ -33,7 +34,8 @@
 		"extra": {
 			"eas": {
 				"projectId": "6b4bf91e-4e1f-410e-b60a-cd746b56dceb"
-			}
+			},
+			"productionApiUrl": "https://dd81-180-243-3-173.ngrok-free.app"
 		}
 	}
 }

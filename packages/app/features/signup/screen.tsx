@@ -5,33 +5,33 @@ import { useRouter } from "solito/router";
 import { SignUpSignInComponent } from "@my/ui/src/components/SignUpSignIn";
 
 export function SignUpScreen() {
-  const { push } = useRouter();
+	const { push } = useRouter();
 
-  const { isLoaded, signUp, setSession } = useSignUp();
+	const { isLoaded, signUp, setSession } = useSignUp();
 
-  if (!setSession || !isLoaded) return null;
+	if (!setSession || !isLoaded) return null;
 
-  const handleOAuthSignUpWithPress = async (strategy: OAuthStrategy) => {
-    push("/signup/sso-oauth/" + strategy);
-  };
+	const handleOAuthSignUpWithPress = async (strategy: OAuthStrategy) => {
+		push("/sso-oauth/" + strategy);
+	};
 
-  const handleEmailSignUpWithPress = async (emailAddress, password) => {
-    await signUp.create({
-      emailAddress,
-      password,
-    });
+	const handleEmailSignUpWithPress = async (emailAddress, password) => {
+		await signUp.create({
+			emailAddress,
+			password,
+		});
 
-    await signUp.prepareEmailAddressVerification();
-    push("/signup/email-verification");
-  };
+		await signUp.prepareEmailAddressVerification();
+		push("/email-verification");
+	};
 
-  return (
-    <YStack f={1} jc="center" ai="center" space>
-      <SignUpSignInComponent
-        type="sign-up"
-        handleOAuthWithPress={handleOAuthSignUpWithPress}
-        handleEmailWithPress={handleEmailSignUpWithPress}
-      />
-    </YStack>
-  );
+	return (
+		<YStack f={1} jc="center" ai="center" space>
+			<SignUpSignInComponent
+				type="sign-up"
+				handleOAuthWithPress={handleOAuthSignUpWithPress}
+				handleEmailWithPress={handleEmailSignUpWithPress}
+			/>
+		</YStack>
+	);
 }
